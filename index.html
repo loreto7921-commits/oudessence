@@ -348,7 +348,7 @@
       const nombre = item.querySelector('.nombre').textContent;
       const precio = item.querySelector('.precio').textContent;
 
-      const mensaje = `Hola, quiero comprar el perfume: ${nombre}, cuyo precio es ${precio}`;
+      const mensaje = `Hola, quiero comprar el perfume: ${nombre}`;
       const url = `https://wa.me/5493513976920?text=${encodeURIComponent(mensaje)}`;
 
       window.open(url, '_blank'); // Abre WhatsApp en nueva pestaña
@@ -375,3 +375,4 @@ function filtrar(categoria) {
 </body>
 
 </html>
+
