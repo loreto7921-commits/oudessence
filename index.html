@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oud Essence</title>
+ <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+  font-family: Arial, sans-serif;
+  background-image: url('imagenes/fondo.jpg'); /* ruta de tu imagen */
+  background-size: cover;       /* ocupa toda la pantalla */
+  background-position: center;  /* centra la imagen */
+  background-repeat: no-repeat; /* no se repite */
+  color: white;
+}
+
+    nav {
+      width: 100%;
+      background: rgba(0,0,0,0.85);
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #f5c518; }
+    .contenedor { max-width: 1400px; margin: auto; padding: 40px 20px; }
+    h1 { text-align: center; color: white; text-shadow: 2px 2px 5px black; margin-bottom: 10px; }
+    .slogan { text-align: center; color: #FFD700; font-size: 20px; margin-bottom: 5px; }
+    .envio { text-align: center; color: white; font-size: 14px; margin-bottom: 40px; }
+    .grid-perfumes {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .item {
+      background: rgba(255,255,255,0.05);
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease-in-out;
+    }
+    .item:hover { transform: scale(1.05); }
+    .item img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .nombre { margin-top: 10px; font-size: 16px; font-weight: bold; color: #fff; }
+    .descripcion { margin-top: 5px; font-size: 14px; color: #ccc; min-height: 40px; }
+    .precio { margin-top: 10px; font-size: 16px; font-weight: bold; color: #FFD700; }
+    .btn-comprar {
+      background: #b0b0b0;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .btn-comprar:hover { background: #888; color: #fff; }
+    #contacto-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 50px;
+      padding: 40px 20px;
+    }
+    #contacto h2 { font-size: 28px; margin-bottom: 10px; }
+    #contacto p { margin-bottom: 15px; font-size: 16px; color: #fff; }
+    #contacto a { text-decoration: none; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#fragancias">Fragancias</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <div class="contenedor">
+    <h1 id="inicio">Oud Essence</h1>
+    <div class="slogan">Fragancias que dejan huella</div>
+    <div class="envio">Envíos a todo el país</div>
+
+<div id="filtros" style="text-align:center; margin-bottom: 20px;">
+  <button onclick="filtrar('todos')">Todos</button>
+  <button onclick="filtrar('masculino')">Masculino</button>
+  <button onclick="filtrar('femenino')">Femenino</button>
+  <button onclick="filtrar('unisex')">Unisex</button>
+</div>
+
+    
+    <div class="grid-perfumes" id="fragancias">
+      <!-- Bloques de perfumes (puedes duplicar hasta 25) -->
+      <div class="item unisex">
+        <img src="imagenes/perfume1.jpg" alt="Perfume 1">
+        <div class="nombre">Lattafa Khamrah Qahwa</div>
+        <div class="descripcion"> Unisex. Fragancia cálida y envolvente, con notas de café tostado, ámbar y madera, perfecta para un aroma elegante y persistente.</div>
+        <div class="precio">$87892</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item femenino">
+        <img src="imagenes/perfume2.jpg" alt="Perfume 2">
+        <div class="nombre">Lattafa Eclaire </div>
+        <div class="descripcion"> Femenino. Delicada y sofisticada, combina flores blancas y almizcle, ideal para un toque femenino y moderno.</div>
+        <div class="precio">$75530</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item unisex">
+        <img src="imagenes/perfume3.jpg" alt="Perfume 3">
+        <div class="nombre">Lattafa Sublime</div>
+        <div class="descripcion">Unisex. Notas frescas y amaderadas que crean un equilibrio entre frescura y profundidad, perfecto para el día o la noche.</div>
+        <div class="precio">$69499</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item masculino">
+        <img src="imagenes/perfume4.jpg" alt="Perfume 4">
+        <div class="nombre">Lattafa Asad Zanzíbar</div>
+        <div class="descripcion">Masculino. Aroma intenso y especiado con acordes de madera, cuero y especias orientales, ideal para quienes buscan presencia y carácter.</div>
+        <div class="precio">$61320</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a> 
+    </div>
+      <div class="item unisex">
+        <img src="imagenes/perfume5.jpg" alt="Perfume 5">
+        <div class="nombre">Al Haramain Amber Oud Gold</div>
+        <div class="descripcion">Unisex. Rico y lujoso, mezcla de ámbar, oud y especias cálidas, pensado para una experiencia olfativa sofisticada y duradera.</div>
+        <div class="precio">$128772</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item unisex">
+        <img src="imagenes/perfume6.jpg" alt="Perfume 6">
+        <div class="nombre">Armaf Odyssey Mandarin Sky</div>
+        <div class="descripcion">Unisex. Fresco y cítrico, con toques de mandarina y notas acuáticas, ideal para el uso diario y ambientes informales.</div>
+        <div class="precio">$85848</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item masculino">
+        <img src="imagenes/perfume7.jpg" alt="Perfume 7">
+        <div class="nombre">Afnan 9 PM Rebel</div>
+        <div class="descripcion">Masculino. Moderno y audaz, combina especias orientales con madera y ámbar, perfecto para la noche y ocasiones especiales.</div>
+        <div class="precio">$73584</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+  </div>
+      <div class="item masculino">
+        <img src="imagenes/perfume8.jpg" alt="Perfume 8">
+        <div class="nombre">Bharara King</div>
+        <div class="descripcion">Masculino. Fragancia intensa y elegante, con notas amaderadas y orientales, ideal para un look sofisticado y seguro.</div>
+        <div class="precio">$134904</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item unisex">
+        <img src="imagenes/perfume9.jpg" alt="Perfume 9">
+        <div class="nombre">Xerjoff Erba Pura</div>
+        <div class="descripcion">Unisex. Aroma cítrico-frutal con notas de naranja, limón y almizcle, fresco y vibrante, ideal para cualquier momento del día.</div>
+        <div class="precio">$550000</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+    </div>
+      <div class="item femenino">
+        <img src="imagenes/perfume10.jpg" alt="Perfume 10">
+        <div class="nombre">Lattafa Amethyst</div>
+        <div class="descripcion">Femenino. Fragancia floral y afrutada, delicada y elegante, diseñada para resaltar la feminidad con sutileza.</div>
+        <div class="precio">$69499</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item masculino">
+        <img src="imagenes/perfume11.jpg" alt="Perfume 11">
+        <div class="nombre">Armaf Club de Nuit Intense</div>
+        <div class="descripcion">Masculino. Potente y carismático, con notas de bergamota, manzana y madera de abeto, ideal para la noche y ocasiones especiales.</div>
+        <div class="precio">$69576</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item masculino">
+        <img src="imagenes/perfume12.jpg" alt="Perfume 12">
+        <div class="nombre">Armaf Club de Nuit Oud</div>
+        <div class="descripcion">Masculino. Oriental y profundo, con oud, especias y madera, pensado para quienes buscan un aroma lujoso y distintivo.</div>
+        <div class="precio">$122640</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item masculino">
+        <img src="imagenes/perfume13.jpg" alt="Perfume 13">
+        <div class="nombre">Rasasi Hawas Him</div>
+        <div class="descripcion">Masculino. Fresco y enérgico, mezcla de cítricos y maderas suaves, ideal para el día a día.</div>
+        <div class="precio">$65408</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item masculino">
+        <img src="imagenes/perfume14.jpg" alt="Perfume 14">
+        <div class="nombre">Rasasi Hawas Ice</div>
+        <div class="descripcion">Masculino. Notas acuáticas y frutales con fondo amaderado, para un aroma fresco y dinámico.</div>
+        <div class="precio">$77672</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item masculino">
+        <img src="imagenes/perfume15.jpg" alt="Perfume 15">
+        <div class="nombre">Bharara Bharara Onyx</div>
+        <div class="descripcion">Masculino. Elegante y sofisticado, combina especias, ámbar y maderas nobles, ideal para ocasiones formales.</div>
+        <div class="precio">$132860</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item masculino">
+        <img src="imagenes/perfume16.jpg" alt="Perfume 16">
+        <div class="nombre">Al Haramain Detour Noir</div>
+        <div class="descripcion">Masculino. Aroma misterioso y potente, con cuero, madera y especias, pensado para un estilo audaz y moderno.</div>
+        <div class="precio">$75628</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item masculino">
+        <img src="imagenes/perfume17.jpg" alt="Perfume 17">
+        <div class="nombre">Al Haramain L’Aventure</div>
+        <div class="descripcion">Masculino. Fresco y aventurero, mezcla cítricos y maderas, ideal para el día y actividades al aire libre.</div>
+        <div class="precio">$77672</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item unisex">
+        <img src="imagenes/perfume18.jpg" alt="Perfume 18">
+        <div class="nombre">Maison Alhambra Salvo Elixir</div>
+        <div class="descripcion">Unisex. Ligero y elegante, notas florales y amaderadas para un aroma versátil y moderno.</div>
+        <div class="precio">$57232</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item unisex">
+        <img src="imagenes/perfume19.jpg" alt="Perfume 19">
+        <div class="nombre">Maison Alhambra Sceptre Malachite</div>
+        <div class="descripcion">Unisex. Fresco y sofisticado, con notas cítricas y un toque amaderado, perfecto para uso diario.</div>
+        <div class="precio">$81760</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item masculino">
+        <img src="imagenes/perfume20.jpg" alt="Perfume 20">
+        <div class="nombre">Lattafa Asad Bourbon</div>
+        <div class="descripcion">Masculino. Aroma cálido y profundo, mezcla de madera, ámbar y especias, ideal para la noche.</div>
+        <div class="precio">$79716</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item femenino">
+        <img src="imagenes/perfume21.jpg" alt="Perfume 21">
+        <div class="nombre">Lattafa Fakhar Rose</div>
+        <div class="descripcion">Femenino. Rosa intensa con fondo dulce y amaderado, elegante y romántica.</div>
+          <div class="precio">$73584</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item femenino">
+        <img src="imagenes/perfume22.jpg" alt="Perfume 22">
+        <div class="nombre">Lattafa Yara Rosa</div>
+        <div class="descripcion">Femenino. Fragancia floral fresca y delicada, ideal para un look femenino y moderno.</div>
+          <div class="precio">$75628</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item femenino">
+        <img src="imagenes/perfume23.jpg" alt="Perfume 23">
+        <div class="nombre">Lattafa Mayar Cherry Intense</div>
+        <div class="descripcion">Femenino. Dulce y frutal, con notas de cereza y almizcle, ideal para momentos casuales y juveniles.</div>
+          <div class="precio">$67452</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item masculino">
+        <img src="imagenes/perfume24.jpg" alt="Perfume 24">
+        <div class="nombre">Lattafa His Confession</div>
+        <div class="descripcion">Masculino. Aroma elegante y masculino, con notas amaderadas y especiadas, ideal para un estilo sofisticado.</div>
+          <div class="precio">$75628</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item femenino">
+        <img src="imagenes/perfume25.jpg" alt="Perfume 25">
+        <div class="nombre">Lattafa Her Confession</div>
+        <div class="descripcion">Femenino. Delicada y floral, con notas dulces y almizcladas, perfecta para un toque romántico.</div>
+          <div class="precio">$73584</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item femenino">
+        <img src="imagenes/perfume26.jpg" alt="Perfume 26">
+        <div class="nombre">Armaf Club de Nuit Woman</div>
+        <div class="descripcion">Femenino. Floral y afrutada, con notas frescas de rosa y jazmín, ideal para uso diario.</div>
+        <div class="precio">$75628</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item femenino">
+        <img src="imagenes/perfume27.jpg" alt="Perfume 27">
+        <div class="nombre">Armaf Odyssey Candee</div>
+        <div class="descripcion">Femenino. Dulce y chispeante, con notas frutales y florales, diseñada para un estilo alegre y moderno.</div>
+          <div class="precio">$73584</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item femenino">
+        <img src="imagenes/perfume28.jpg" alt="Perfume 28">
+        <div class="nombre">Afnan 9 PM Pour Femme</div>
+        <div class="descripcion">Femenino. Elegante y nocturna, mezcla de flores y madera, ideal para la noche.</div>
+          <div class="precio">$75628</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item femenino">
+        <img src="imagenes/perfume29.jpg" alt="Perfume 29">
+        <div class="nombre">Afnan 9 PM Elixir</div>
+        <div class="descripcion">Femenino. Fragancia intensa y sofisticada, con notas orientales y florales, para ocasiones especiales.</div>
+          <div class="precio">$94024</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+      <div class="item unisex">
+        <img src="imagenes/perfume30.jpg" alt="Perfume 30">
+        <div class="nombre">Lattafa Honor and Glory</div>
+        <div class="descripcion">Unisex. Dulce y juvenil, con notas de caramelo y flores, perfecta para un estilo moderno y divertido.</div>
+          <div class="precio">$69496</div>
+        <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">Comprar</a>
+      </div>
+  <!-- Sección contacto fuera del contenedor -->
+   </div>
+  </div>
+
+  <div id="contacto-container">
+    <div id="contacto">
+      <h2>Contacto</h2>
+      <p>Envíanos un mensaje por WhatsApp para pedidos:</p>
+      <a class="btn-comprar" href="https://wa.me/5493513976920" target="_blank">¡Comprar Ahora!</a>
+    </div>
+  </div>
+
+<script>
+  // Selecciona solo los botones dentro de perfumes (.item)
+  const botonesPerfumes = document.querySelectorAll('.grid-perfumes .item .btn-comprar');
+
+  botonesPerfumes.forEach(boton => {
+    boton.addEventListener('click', (e) => {
+      e.preventDefault(); // Evita la acción por defecto del enlace
+      const item = boton.closest('.item'); // Busca el contenedor del perfume
+      const nombre = item.querySelector('.nombre').textContent;
+      const precio = item.querySelector('.precio').textContent;
+
+      const mensaje = `Hola, quiero comprar el perfume: ${nombre}, cuyo precio es ${precio}`;
+      const url = `https://wa.me/5493513976920?text=${encodeURIComponent(mensaje)}`;
+
+      window.open(url, '_blank'); // Abre WhatsApp en nueva pestaña
+    });
+  });
+</script>
+
+<script>
+function filtrar(categoria) {
+  const items = document.querySelectorAll('.grid-perfumes .item');
+  items.forEach(item => {
+    if(categoria === 'todos') {
+      item.style.display = 'flex'; // muestra todos
+    } else {
+      if(item.classList.contains(categoria)) {
+        item.style.display = 'flex'; // muestra los que coinciden
+      } else {
+        item.style.display = 'none'; // oculta los demás
+      }
+    }
+  });
+}
+</script>
+</body>
+</html>
